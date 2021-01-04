@@ -24,12 +24,17 @@ val peko: Princess by lazy(::Princess)
 // 常量const，const≠final,only primitives
 const val const_a: Double = 114514.0
 
-//const在顶层声明
+//const在顶层声明——常量，object类，伴生
 //在object修饰的类中声明，在kotlin中称为对象声明，它相当于Java中一种形式的单例类
 //在伴生对象中声明
 object Megumi {
     const val name = "惠惠"
     val mona: Princess by lazy(::Princess)
+}
+class WangCai{
+    companion object {
+        const val name = "旺财"
+    }
 }
 
 fun main() {
@@ -41,6 +46,7 @@ fun main() {
     println(princess.tp)
     println("peko.hp=${peko.tp}")
     println("const_a=$const_a")
-    println("megumi=${Megumi.mona}")
+    println("megumi=${Megumi.name}")
+    println("wangcai=${WangCai.name}")
 
 }
