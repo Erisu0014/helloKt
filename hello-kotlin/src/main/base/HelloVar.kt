@@ -21,7 +21,7 @@ lateinit var princess: Princess
 //使用lazy{}高阶函数，不能用于类型推断。且该函数在变量的数据类型后面，用by链接。
 //必须是只读变量，即用val声明的变量。
 val peko: Princess by lazy(::Princess)
-// 常量const，const≠final,only primitives
+// 常量const，const≠final,only primitives e.g.https://stackoverflow.com/questions/37595936/what-is-the-difference-between-const-and-val
 const val const_a: Double = 114514.0
 
 //const在顶层声明——常量，object类，伴生
