@@ -16,11 +16,11 @@ var var_c: String? = null
 //  不能声明于可空变量。
 //  不能声明于基本数据类型变量。例：Int、Float、Double等，注意：String类型是可以的。
 //  声明后，在使用该变量前必须赋值，不然会抛出UninitializedPropertyAccessException异常。
-lateinit var princess: Princess
+lateinit var princessA: PrincessA
 // lazy init
 //使用lazy{}高阶函数，不能用于类型推断。且该函数在变量的数据类型后面，用by链接。
 //必须是只读变量，即用val声明的变量。
-val peko: Princess by lazy(::Princess)
+val PEKO: PrincessA by lazy(::PrincessA)
 // 常量const，const≠final,only primitives e.g.https://stackoverflow.com/questions/37595936/what-is-the-difference-between-const-and-val
 const val const_a: Double = 114514.0
 
@@ -29,7 +29,7 @@ const val const_a: Double = 114514.0
 //在伴生对象中声明
 object Megumi {
     const val name = "惠惠"
-    val mona: Princess by lazy(::Princess)
+    val MONA: PrincessA by lazy(::PrincessA)
 }
 class WangCai{
     companion object {
@@ -41,10 +41,10 @@ fun main() {
     println("var_a=$var_a \t var_b=$var_b")
     println("val_a=$val_a")
     println("var_c=$var_c")
-    princess = Princess()
-    princess.hp = 31109
-    println(princess.tp)
-    println("peko.hp=${peko.tp}")
+    princessA = PrincessA()
+    princessA.hp = 31109
+    println(princessA.tp)
+    println("PEKO.hp=${PEKO.tp}")
     println("const_a=$const_a")
     println("megumi=${Megumi.name}")
     println("wangcai=${WangCai.name}")

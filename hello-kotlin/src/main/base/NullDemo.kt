@@ -35,7 +35,7 @@ fun main() {
     b = null
     println("b==null?${b == null}")
     // 使用符号?.判断
-    val kokkoro: Princess?
+    val kokkoro: PrincessA?
     kokkoro = null
     println("kokkoro.hp=${kokkoro?.hp}")
     // 链式调用
@@ -50,6 +50,8 @@ fun main() {
     // let操作符的作用：当时用符号?.验证的时候忽略掉null
     // let的用法：变量?.let{ … }
     val arrTest: Array<Int?> = arrayOf(1, 2, null, 3, 4, null, null, 5)
+
+
     arrTest.forEach { it?.let { print("$it\t") } }
     println()
     // Elvis操作符
@@ -99,7 +101,6 @@ fun main() {
     //  尽可能的不要使用!!操作符，多使用?:、?.操作符，以及let{}函数
     //  尽可能的使用as?操作符去替换掉as,在不确定是否可以安全转换的情况下不使用toXXX()方法
     //
-
 
 
 }
