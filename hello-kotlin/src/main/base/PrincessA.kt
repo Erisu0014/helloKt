@@ -1,10 +1,10 @@
 package main.base
 
-class PrincessA {
-    var hp: Long = 31109L
-    var tp: Int = 100
+/**
+ * 类型别名的定义必须在顶层声明
+ */
+typealias   PrincessB = PrincessA
 
-    init {
-        hp = 0
-    }
+open class PrincessA constructor(open var hp: Long? = 31109L, open var tp: Int? = 100) {
+
 }

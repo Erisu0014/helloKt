@@ -28,6 +28,7 @@ open class Battle constructor(
     属性必须在init之前定义才不会被弃用
     用lateinit修饰的属性，不能为基本类型。String不是基本类型
      */
+
     open lateinit var character: String
 
     /**
@@ -38,7 +39,7 @@ open class Battle constructor(
         get() = field   // 这句可以省略，kotlin默认实现的方式
     var battle_time: Double? = null
         get() = field
-        //    get() = 12.3
+    //    get() = 12.3
         /** 所谓后备属性，其实是对后备字段的一个变种，它实际上也是隐式的对属性值的初始化声明，避免了空指针。*/
         set(value) {
             field = if (value!! > 90.0) 90.0 else value
@@ -68,9 +69,10 @@ open class Battle constructor(
         println("time=$time,Characters=$characters,type=$type")
     }
 
-    companion object {
+    companion object test {
         /** 对象的顶层或成员，即顶层声明。 */
         const val CONST_NUM = 10
+        val true_num = 10
     }
 
     open fun helloWorld() {
@@ -109,6 +111,5 @@ fun main() {
     println(battle2.isCached)
 //    battle2.battle_time = null
     println(GroupBattle().helloWorld("asdf"))
-
 }
 

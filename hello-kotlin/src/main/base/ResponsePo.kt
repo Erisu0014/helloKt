@@ -18,5 +18,6 @@ fun main() {
     val responsePo2 = responsePo.copy(msg = "やった")
     println(responsePo2.toString())
     /*  解构声明  */
-
+    val (code, msg) = responsePo
+    println("code=$code,msg=$msg")
 }

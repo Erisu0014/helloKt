@@ -20,7 +20,8 @@ lateinit var princessA: PrincessA
 // lazy init
 //使用lazy{}高阶函数，不能用于类型推断。且该函数在变量的数据类型后面，用by链接。
 //必须是只读变量，即用val声明的变量。
-val PEKO: PrincessA by lazy(::PrincessA)
+val PEKO: PrincessA by lazy { PrincessA() }
+
 // 常量const，const≠final,only primitives e.g.https://stackoverflow.com/questions/37595936/what-is-the-difference-between-const-and-val
 const val const_a: Double = 114514.0
 
@@ -29,7 +30,7 @@ const val const_a: Double = 114514.0
 //在伴生对象中声明
 object Megumi {
     const val name = "惠惠"
-    val MONA: PrincessA by lazy(::PrincessA)
+    val MONA: PrincessA by lazy { PrincessA() }
 }
 class WangCai{
     companion object {
